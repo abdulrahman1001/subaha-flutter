@@ -11,7 +11,7 @@ class Pageone extends GetView<bind> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('مسبحتك في جيبك', style: TextStyle(fontSize: 30)),
+        title: Text('مسبحتك في جيبك', style: TextStyle(fontSize: 20)),
         actions: [
           MaterialButton(color: Colors.red,child: Text('أضف اسمك', style: TextStyle(fontSize: 30)),onPressed: () {
             showModalBottomSheet(
@@ -22,8 +22,8 @@ class Pageone extends GetView<bind> {
           })
         ],
       ),
-      body: Center(
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -33,11 +33,11 @@ class Pageone extends GetView<bind> {
                     children: [
                       Text('${controller.name}',
                           style: TextStyle(
-                              fontSize: 100)), // Assuming name is an Rx<Type>
+                              fontSize: 40)), // Assuming name is an Rx<Type>
                       Text('${controller.counter.value}',
                           style: TextStyle(
                               fontSize:
-                                  150)), // Assuming counter is an Rx<Type>
+                                  50)), // Assuming counter is an Rx<Type>
                     ],
                   );
                 },
@@ -52,9 +52,9 @@ class Pageone extends GetView<bind> {
                     onPressed: () {
                       controller.reset();
                     },
-                    child: Text('صفر العداد', style: TextStyle(fontSize: 70)),
+                    child: Text('صفر العداد', style: TextStyle(fontSize: 30)),
                   ),
-                  SizedBox(width: 30),
+                  SizedBox(width: 15),
                   MaterialButton(
                     color: Colors.orange,
                     onPressed: () {
@@ -62,7 +62,7 @@ class Pageone extends GetView<bind> {
                     },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 32),
-                      child: Text('++', style: TextStyle(fontSize: 60)),
+                      child: Text('++', style: TextStyle(fontSize: 30)),
                     ),
                   ),
                 ],
