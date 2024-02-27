@@ -3,7 +3,8 @@ import 'package:get/get.dart';
 import 'package:hivetrain/bind.dart';
 import 'package:hivetrain/bottomshet.dart';
 
-class Pageone extends GetView<bind> { // Ensure the class name 'Bind' matches your controller
+class Pageone extends GetView<bind> {
+  // Ensure the class name 'Bind' matches your controller
   Pageone({super.key});
 
   @override
@@ -12,16 +13,13 @@ class Pageone extends GetView<bind> { // Ensure the class name 'Bind' matches yo
       appBar: AppBar(
         title: Text('مسبحتك في جيبك', style: TextStyle(fontSize: 30)),
         actions: [
-          IconButton(
-              iconSize: 40,
-              onPressed: () {
-                showModalBottomSheet(
-                    context: context,
-                    builder: (BuildContext bc) {
-                      return MyCustomBottomSheet();
-                    });
-              },
-              icon: Icon(Icons.search))
+          MaterialButton(color: Colors.red,child: Text('أضف اسمك', style: TextStyle(fontSize: 30)),onPressed: () {
+            showModalBottomSheet(
+                context: context,
+                builder: (BuildContext bc) {
+                  return MyCustomBottomSheet();
+                });
+          })
         ],
       ),
       body: Center(
@@ -33,8 +31,13 @@ class Pageone extends GetView<bind> { // Ensure the class name 'Bind' matches yo
                 builder: (controller) {
                   return Column(
                     children: [
-                      Text('${controller.name}', style: TextStyle(fontSize: 100)), // Assuming name is an Rx<Type>
-                      Text('${controller.counter.value}', style: TextStyle(fontSize: 150)), // Assuming counter is an Rx<Type>
+                      Text('${controller.name}',
+                          style: TextStyle(
+                              fontSize: 100)), // Assuming name is an Rx<Type>
+                      Text('${controller.counter.value}',
+                          style: TextStyle(
+                              fontSize:
+                                  150)), // Assuming counter is an Rx<Type>
                     ],
                   );
                 },
