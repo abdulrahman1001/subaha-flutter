@@ -14,6 +14,7 @@ class _MyCustomBottomSheetState extends State<MyCustomBottomSheet> {
   Widget build(BuildContext context) {
     bind c = Get.find();
     return Container(
+      height: double.infinity,
       padding: EdgeInsets.all(20),
       child: SingleChildScrollView(
         child: Column(
@@ -26,7 +27,7 @@ class _MyCustomBottomSheetState extends State<MyCustomBottomSheet> {
                 
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 100),
             ElevatedButton(
               onPressed: () {
                 c.setname(_nameController.text);
